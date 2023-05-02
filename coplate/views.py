@@ -11,12 +11,16 @@ from braces.views import LoginRequiredMixin, UserPassesTestMixin
 
 
 class IndexView(ListView):
+    print('호롤롤로')
     model = Review
     template_name = 'coplate/index.html'
+
     context_object_name = 'reviews'
-    paginate_by = 4
-    ordering = ['-dt_created']
-    print("테스트용으로 김은수 유저가 추가한 아무쓸모없는 코드한줄")
+
+    paginate_by = 9
+    print('hi~^D^')
+    ordering = ['dt_created']
+
 
 
 class ReviewDetailView(DetailView):
@@ -35,11 +39,12 @@ class ReviewCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("review-detail", kwargs={'review_id':self.object.id})
+        return reverse("review-detail", kwargs={'review_id': self.object.id})
 
     def test_func(self, user):
         if EmailAddress.objects.filter(user=user, verified=True).exists():
             pass
+
 
 class ReviewUpdateView(UpdateView):
     model = Review
@@ -48,7 +53,7 @@ class ReviewUpdateView(UpdateView):
     pk_url_kwarg = "review_id"
 
     def get_success_url(self):
-        return reverse("review-detail", kwargs={'review_id':self.object.id})
+        return reverse("review-detail", kwargs={'review_id': self.object.id})
 
 
 class ReviewDeleteView(DeleteView):
@@ -65,4 +70,4 @@ class CustomPasswordChangeView(PasswordChangeView):
         return reverse("index")
 
 
-
+"excuse me"
