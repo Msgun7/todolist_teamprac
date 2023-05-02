@@ -11,11 +11,14 @@ from braces.views import LoginRequiredMixin, UserPassesTestMixin
 
 
 class IndexView(ListView):
+    print('호롤롤로')
     model = Review
     template_name = 'coplate/index.html'
-    context_object_name = 'review'
-    paginate_by = 4
-    ordering = ['-dt_created']
+
+    context_object_name = 'reviews'
+    paginate_by = 9
+    print('hi~^D^')
+    ordering = ['dt_created']
 
 
 class ReviewDetailView(DetailView):
