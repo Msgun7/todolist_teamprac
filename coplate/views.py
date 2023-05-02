@@ -16,9 +16,11 @@ class IndexView(ListView):
     template_name = 'coplate/index.html'
 
     context_object_name = 'reviews'
+
     paginate_by = 9
     print('hi~^D^')
     ordering = ['dt_created']
+
 
 
 class ReviewDetailView(DetailView):
