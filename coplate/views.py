@@ -14,6 +14,7 @@ class IndexView(ListView):
     print('호롤롤로')
     model = Review
     template_name = 'coplate/index.html'
+
     context_object_name = 'reviews'
     paginate_by = 9
     print('hi~^D^')
