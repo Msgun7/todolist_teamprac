@@ -12,6 +12,7 @@ from braces.views import LoginRequiredMixin, UserPassesTestMixin
 
 class IndexView(ListView):
     print('호롤롤로')
+    print('드디어')
     model = Review
     template_name = 'coplate/index.html'
 
