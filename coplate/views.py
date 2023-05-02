@@ -34,11 +34,12 @@ class ReviewCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("review-detail", kwargs={'review_id':self.object.id})
+        return reverse("review-detail", kwargs={'review_id': self.object.id})
 
     def test_func(self, user):
         if EmailAddress.objects.filter(user=user, verified=True).exists():
             pass
+
 
 class ReviewUpdateView(UpdateView):
     model = Review
@@ -47,7 +48,7 @@ class ReviewUpdateView(UpdateView):
     pk_url_kwarg = "review_id"
 
     def get_success_url(self):
-        return reverse("review-detail", kwargs={'review_id':self.object.id})
+        return reverse("review-detail", kwargs={'review_id': self.object.id})
 
 
 class ReviewDeleteView(DeleteView):
@@ -64,4 +65,4 @@ class CustomPasswordChangeView(PasswordChangeView):
         return reverse("index")
 
 
-
+"excuse me"
