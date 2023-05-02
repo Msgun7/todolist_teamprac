@@ -18,6 +18,7 @@ class IndexView(ListView):
     context_object_name = 'reviews'
     paginate_by = 9
     print('hi~^D^')
+    print("hihihihihihihihisoeun")
     ordering = ['dt_created']
 
 
