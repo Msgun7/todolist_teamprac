@@ -19,6 +19,7 @@ class IndexView(ListView):
 
     paginate_by = 9
     print('hi~^D^')
+    print("hihihihihihihihisoeun")
     ordering = ['dt_created']
 
 
