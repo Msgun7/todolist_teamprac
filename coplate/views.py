@@ -16,6 +16,7 @@ class IndexView(ListView):
     context_object_name = 'reviews'
     paginate_by = 4
     ordering = ['-dt_created']
+    print("테스트용으로 김은수 유저가 추가한 아무쓸모없는 코드한줄")
 
 
 class ReviewDetailView(DetailView):
